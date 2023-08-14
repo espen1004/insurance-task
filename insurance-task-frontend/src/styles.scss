@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "Profilfont";
+  src: local("Profilfont"), url(./assets/fonts/Profilfont-Regular-Web.woff2) format("woff2");
+}
+
+body{
+  font-family: "Profilfont", Arial, sans-serif;
+  font-size: 20px;
+}
