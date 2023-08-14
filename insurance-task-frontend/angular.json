@@ -68,7 +68,8 @@
               "browserTarget": "insurance-task-frontend:build:production"
             },
             "development": {
-              "browserTarget": "insurance-task-frontend:build:development"
+              "browserTarget": "insurance-task-frontend:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

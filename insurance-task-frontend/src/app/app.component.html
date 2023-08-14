@@ -1,1 +1,68 @@
-<h1>Test</h1>
+<article class="page">
+  <div class="page-half">
+
+    <h1>Kjøp Bilforsikring</h1>
+    <form [formGroup]="form" name="insuranceForm" (ngSubmit)="next()">
+      <section class="information-text">
+        Det er fire forskjellige forsikringer å velge mellom.
+        Ansvarsforsikring er lovpålagt om kjøretøyet er registrert og skal
+        brukes på veien. I tillegg kan du utvide forsikringen avhengig av
+        hvor gammel bilen din er og hvordan du bruker den.
+      </section>
+
+      <!--Car reg-->
+      <section class="form-input" [formGroup]="form">
+        <label for="carRegistrationNumber">Bilens registreringsnummer</label>
+        <input id="carRegistrationNumber" type="text" formControlName="carRegistrationNumber">
+        <div *ngIf="submitted && f['carRegistrationNumber'].errors" class="text-danger">
+          <div *ngIf="f['carRegistrationNumber'].errors?.['required']">Bilens registreringsnummer er påkvrevd</div>
+        </div>
+      </section>
+      <!--Bonus-->
+      <section></section>
+      <!--CustomerPid-->
+      <section class="form-input" [formGroup]="form">
+        <label for="customerPid">Fødselsnummer</label>
+        <input id="customerPid" type="text" formControlName="customerPid">
+        <div *ngIf="submitted && f['customerPid'].errors" class="text-danger">
+          <div *ngIf="f['customerPid'].errors?.['required']">Fødselsnummer er påkvrevd</div>
+        </div>
+      </section>
+      <!--name-->
+      <section class="form-input-half" [formGroup]="form">
+        <section class="flex-item">
+          <label for="firstName">Fornavn</label>
+          <input id="firstName" type="text" formControlName="firstName">
+          <div *ngIf="submitted && f['firstName'].errors" class="text-danger">
+            <div *ngIf="f['firstName'].errors?.['required']">Fornavn er påkvrevd</div>
+          </div>
+        </section>
+        <section class="flex-item">
+          <label for="lastName">Etternavn</label>
+          <input id="lastName" type="text" formControlName="lastName">
+          <div *ngIf="submitted && f['lastName'].errors" class="text-danger">
+            <div *ngIf="f['lastName'].errors?.['required']">Etternavn er påkvrevd</div>
+          </div>
+        </section>
+      </section>
+      <!--email-->
+      <section class="form-input" [formGroup]="form">
+        <label for="email">E-post</label>
+        <input id="email" type="text" formControlName="email">
+        <div *ngIf="submitted && f['email'].errors" class="text-danger">
+          <div *ngIf="f['email'].errors?.['required']">E-post er påkvrevd</div>
+          <div *ngIf="f['email'].errors?.['email']">Skriv en gyldig e-postadresse</div>
+        </div>
+      </section>
+      <!--buttons-->
+      <!--submit/cancel-->
+      <section class="button-container">
+        <button type="submit">Kjøp</button>
+        <button type="button" (click)="cancel()">Avbryt</button>
+      </section>
+
+    </form>
+  </div>
+
+</article>
+
